@@ -1,0 +1,415 @@
+{
+	"info": {
+		"name": "SyneromeAPI",
+		"_postman_id": "9fa7e779-0ca8-19f8-1ad4-77658816a25e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Synerome-AuthenticateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"dob\": \"1900-01-01T00:00:00\",\n    \"email\": \"test1@test.com\",\n    \"password\": \"test1\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"zip\": \"\",\n    \"country\": \"\",\n    \"phone\": \"\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/AuthenticateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"AuthenticateUser"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Synerome-AuthenticateNutritionist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"dob\": \"1900-01-01T00:00:00\",\n    \"email\": \"test2@test.com\",\n    \"password\": \"test2\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"zip\": \"\",\n    \"country\": \"\",\n    \"phone\": \"\",\n    \"licenseID\":\"1\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/AuthenticateNutritionist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"AuthenticateNutritionist"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Synerome-SignUpUsers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"dob\": \"1900-01-01T00:00:00\",\n    \"email\": \"test1@test.com\",\n    \"password\": \"test1\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"zip\": \"\",\n    \"country\": \"\",\n    \"phone\": \"\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/SignUpUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"SignUpUsers"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Synerome-SignUpNutritionists",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"dob\": \"1900-01-01T00:00:00\",\n    \"email\": \"test2@test.com\",\n    \"password\": \"test2\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"zip\": \"\",\n    \"country\": \"\",\n    \"phone\": \"\",\n    \"licenseID\":\"1\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/SignUpNutritionists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"SignUpNutritionists"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Synerome-GetUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/GetUser/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"GetUser",
+						"3"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Synerome-GetAllUsers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var removeIllegalCharacters = function(input) {\r",
+							"    return input\r",
+							"        .replace(/=/g, '')\r",
+							"        .replace(/\\+/g, '-')\r",
+							"        .replace(/\\//g, '_');\r",
+							"};\r",
+							"\r",
+							"var base64object = function(input) {\r",
+							"    var inputWords = CryptoJS.enc.Utf8.parse(JSON.stringify(input));\r",
+							"    var base64 = CryptoJS.enc.Base64.stringify(inputWords);\r",
+							"    var output = removeIllegalCharacters(base64);\r",
+							"    return output;\r",
+							"};\r",
+							"\r",
+							"var url = request.url;\r",
+							"var slashIndex = url.toLowerCase().startsWith('http') ? 8 : 0;\r",
+							"var path = url.substring(url.indexOf('/', slashIndex), url.length);\r",
+							"\r",
+							"var exp = Date.now() / 1000 | 0;\r",
+							"var iss = 'test1@test.com';\r",
+							"var mth = request.method;\r",
+							"var sub = path;\r",
+							"var header = { 'alg': 'HS256', 'typ': 'JWT' };\r",
+							"var payload = { 'exp': exp, 'iss': iss, 'mth': mth, 'sub': sub };\r",
+							"\r",
+							"var unsignedToken = base64object(header) + \".\" + base64object(payload);\r",
+							"\r",
+							"var signatureHash = CryptoJS.HmacSHA256(unsignedToken, 'SyneromeServices2017');\r",
+							"var signature = CryptoJS.enc.Base64.stringify(signatureHash);\r",
+							"var token = unsignedToken + '.' + signature;\r",
+							"\r",
+							"postman.setGlobalVariable('authToken', removeIllegalCharacters(token));"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QxQHRlc3QuY29tIiwibmJmIjoxNTA5MzQ0NTI5LCJleHAiOjE1MDkzNDQ1ODksImlhdCI6MTUwOTM0NDUyOX0.7QcOl4FV30I9sQT2l6J14vix1xFmNASzuTaIMOBx2rg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/GetAllUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"GetAllUsers"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Synerome-UpdateUsers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var removeIllegalCharacters = function(input) {\r",
+							"    return input\r",
+							"        .replace(/=/g, '')\r",
+							"        .replace(/\\+/g, '-')\r",
+							"        .replace(/\\//g, '_');\r",
+							"};\r",
+							"\r",
+							"var base64object = function(input) {\r",
+							"    var inputWords = CryptoJS.enc.Utf8.parse(JSON.stringify(input));\r",
+							"    var base64 = CryptoJS.enc.Base64.stringify(inputWords);\r",
+							"    var output = removeIllegalCharacters(base64);\r",
+							"    return output;\r",
+							"};\r",
+							"\r",
+							"var url = request.url;\r",
+							"var slashIndex = url.toLowerCase().startsWith('http') ? 8 : 0;\r",
+							"var path = url.substring(url.indexOf('/', slashIndex), url.length);\r",
+							"\r",
+							"var exp = Date.now() / 1000 | 0;\r",
+							"var iss = 'test1@test.com';\r",
+							"var mth = request.method;\r",
+							"var sub = path;\r",
+							"var header = { 'alg': 'HS256', 'typ': 'JWT' };\r",
+							"var payload = { 'exp': exp, 'iss': iss, 'mth': mth, 'sub': sub };\r",
+							"\r",
+							"var unsignedToken = base64object(header) + \".\" + base64object(payload);\r",
+							"\r",
+							"var signatureHash = CryptoJS.HmacSHA256(unsignedToken, 'SyneromeServices2017');\r",
+							"var signature = CryptoJS.enc.Base64.stringify(signatureHash);\r",
+							"var token = unsignedToken + '.' + signature;\r",
+							"\r",
+							"postman.setGlobalVariable('authToken', removeIllegalCharacters(token));"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QxQHRlc3QuY29tIiwibmJmIjoxNTA5MzQ0NTI5LCJleHAiOjE1MDkzNDQ1ODksImlhdCI6MTUwOTM0NDUyOX0.7QcOl4FV30I9sQT2l6J14vix1xFmNASzuTaIMOBx2rg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Test1\",\n    \"lastName\": \"Test1\",\n    \"dob\": \"1900-01-01T00:00:00\",\n    \"email\": \"test1@test.com\",\n    \"password\": \"test1\",\n    \"city\": \"1\",\n    \"state\": \"1\",\n    \"zip\": \"1212\",\n    \"country\": \"ISA\",\n    \"phone\": \"324324\"\n}\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/UpdateUsers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"UpdateUsers",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Synerome-UpdateNutritionists",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var removeIllegalCharacters = function(input) {\r",
+							"    return input\r",
+							"        .replace(/=/g, '')\r",
+							"        .replace(/\\+/g, '-')\r",
+							"        .replace(/\\//g, '_');\r",
+							"};\r",
+							"\r",
+							"var base64object = function(input) {\r",
+							"    var inputWords = CryptoJS.enc.Utf8.parse(JSON.stringify(input));\r",
+							"    var base64 = CryptoJS.enc.Base64.stringify(inputWords);\r",
+							"    var output = removeIllegalCharacters(base64);\r",
+							"    return output;\r",
+							"};\r",
+							"\r",
+							"var url = request.url;\r",
+							"var slashIndex = url.toLowerCase().startsWith('http') ? 8 : 0;\r",
+							"var path = url.substring(url.indexOf('/', slashIndex), url.length);\r",
+							"\r",
+							"var exp = Date.now() / 1000 | 0;\r",
+							"var iss = 'test2@test.com';\r",
+							"var mth = request.method;\r",
+							"var sub = path;\r",
+							"var header = { 'alg': 'HS256', 'typ': 'JWT' };\r",
+							"var payload = { 'exp': exp, 'iss': iss, 'mth': mth, 'sub': sub };\r",
+							"\r",
+							"var unsignedToken = base64object(header) + \".\" + base64object(payload);\r",
+							"\r",
+							"var signatureHash = CryptoJS.HmacSHA256(unsignedToken, 'SyneromeServices2017');\r",
+							"var signature = CryptoJS.enc.Base64.stringify(signatureHash);\r",
+							"var token = unsignedToken + '.' + signature;\r",
+							"\r",
+							"postman.setGlobalVariable('authToken', removeIllegalCharacters(token));"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QyQHRlc3QuY29tIiwibmJmIjoxNTA5MzQ1NDI3LCJleHAiOjE1MDkzNDU0ODcsImlhdCI6MTUwOTM0NTQyN30.1Z8HzxnEwMkv4dRl4NIslGNebg4FHbz6sWzbZU943VA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Test2\",\n    \"lastName\": \"Test2\",\n    \"dob\": \"1900-01-01T00:00:00\",\n    \"email\": \"test2@test.com\",\n    \"password\": \"test1\",\n    \"city\": \"2\",\n    \"state\": \"2\",\n    \"zip\": \"343434\",\n    \"country\": \"ISA\",\n    \"phone\": \"\"\n}\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:64841/SyneromeAPI/SyneromeAuth/UpdateNutritionists/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64841",
+					"path": [
+						"SyneromeAPI",
+						"SyneromeAuth",
+						"UpdateNutritionists",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

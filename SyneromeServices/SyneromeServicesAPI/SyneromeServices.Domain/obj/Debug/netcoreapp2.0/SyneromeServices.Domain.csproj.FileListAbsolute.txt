@@ -1,0 +1,17 @@
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\bin\Debug\netcoreapp2.0\SyneromeServices.Domain.deps.json
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\bin\Debug\netcoreapp2.0\SyneromeServices.Domain.dll
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\bin\Debug\netcoreapp2.0\SyneromeServices.Domain.pdb
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.csproj.CoreCompileInputs.cache
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.AssemblyInfoInputs.cache
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.AssemblyInfo.cs
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.dll
+S:\Tech\Projects\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.pdb
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\bin\Debug\netcoreapp2.0\SyneromeServices.Domain.deps.json
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\bin\Debug\netcoreapp2.0\SyneromeServices.Domain.dll
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\bin\Debug\netcoreapp2.0\SyneromeServices.Domain.pdb
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.csprojResolveAssemblyReference.cache
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.csproj.CoreCompileInputs.cache
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.AssemblyInfoInputs.cache
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.AssemblyInfo.cs
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.dll
+S:\Tech\Projects\SyneromeServices\SyneromeServicesAPI\SyneromeServices.Domain\obj\Debug\netcoreapp2.0\SyneromeServices.Domain.pdb

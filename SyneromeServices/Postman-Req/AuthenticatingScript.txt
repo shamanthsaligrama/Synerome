@@ -1,0 +1,32 @@
+var removeIllegalCharacters = function(input) {
+    return input
+        .replace(/=/g, '')
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_');
+};
+
+var base64object = function(input) {
+    var inputWords = CryptoJS.enc.Utf8.parse(JSON.stringify(input));
+    var base64 = CryptoJS.enc.Base64.stringify(inputWords);
+    var output = removeIllegalCharacters(base64);
+    return output;
+};
+
+var url = request.url;
+var slashIndex = url.toLowerCase().startsWith('http') ? 8 : 0;
+var path = url.substring(url.indexOf('/', slashIndex), url.length);
+
+var exp = Date.now() / 1000 | 0;
+var iss = '<Email Here>';
+var mth = request.method;
+var sub = path;
+var header = { 'alg': 'HS256', 'typ': 'JWT' };
+var payload = { 'exp': exp, 'iss': iss, 'mth': mth, 'sub': sub };
+
+var unsignedToken = base64object(header) + "." + base64object(payload);
+
+var signatureHash = CryptoJS.HmacSHA256(unsignedToken, '<Application Secret>');
+var signature = CryptoJS.enc.Base64.stringify(signatureHash);
+var token = unsignedToken + '.' + signature;
+
+postman.setGlobalVariable('authToken', removeIllegalCharacters(token));
